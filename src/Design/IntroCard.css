@@ -1,0 +1,36 @@
+.card-layout{
+   height: 420px;
+   width: 92%;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 5px;
+   border-radius: 16px;
+   background: linear-gradient(120deg, rgba(96, 196, 84, 0.322), rgba(166, 243, 183, 0.58) 70%, rgba(45, 178, 220, 0.19) 100%);
+   display: flex;
+    grid-template-columns: auto;
+    column-gap: 40px;
+}
+
+.card-info{
+    height: 150px;
+    width: 94%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    border-radius: 16px;
+    background-color: rgba(103, 172, 103, 0.836);
+    display: flex;
+    grid-template-columns: auto;
+    column-gap: 40px;
+}
+
+.card1{
+    height: 400px;
+    width: 60%;
+    /* border: 1px solid black; */
+}
+.card2{
+    height: 400px;
+    width: 50%;
+    /* border: 1px solid black; */
+}

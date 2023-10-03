@@ -1,0 +1,39 @@
+.layout{
+    height: 70px;
+    width: 98%;
+    background: linear-gradient(120deg, rgba(1, 243, 10, 0.205), rgba(9, 70, 26, 0.158) 60% );
+    border-radius: 4px 8px ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    display: flex;
+    grid-template-columns: auto;
+    column-gap: 20px;
+}
+
+.layout1{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    
+}
+.layout2{
+    width: 400px;
+    margin-left: 480px;
+    display: flex;
+     align-items: center;
+     justify-content: center;
+    grid-template-columns: auto;
+    column-gap: 40px;
+    font-size: 0.8rem;
+    
+}
+.layout3{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   grid-template-columns: auto;
+   column-gap: 40px;
+   font-size: 0.8rem;
+}

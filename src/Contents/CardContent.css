@@ -1,0 +1,56 @@
+.card-balance{
+    height: 180px;
+    width: 98%;
+    background-image: url('../images/Illustration\ for\ cryptocurrency.png');
+    background-position: center;
+    background-size: cover;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-back{
+    height: 200px;
+    width: 96%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -80px;
+    display: flex;
+    grid-template-columns: auto;
+    column-gap: 50px;
+}
+
+.card{
+    height: 200px;
+    width: 400px;
+    background-color: coral;
+    border-radius: 16px;
+}
+
+.layoutOutline{
+    height: 400px;
+    margin-top: 10px;
+    display: flex;
+    grid-template-columns: auto;
+    column-gap: 20px;
+}
+.credit{
+    height: 320px;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.activity{
+    height: 70px;
+    background-color: white;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+.calender{
+    height: 350px;
+    width: 35%;
+    border: 1px solid black;
+    margin-top: 20px;
+    
+}
