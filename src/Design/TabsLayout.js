@@ -6,6 +6,7 @@ import logo from '../images/Logo 500x500 px 1.png'
 import {HiOutlineMail} from 'react-icons/hi'
 import {MdOutlineNotificationsActive} from 'react-icons/md'
 import {FiLogOut} from 'react-icons/fi'
+import './IntroCard.css'
 
 const { Sider, Content} = Layout;
 const { SubMenu } = Menu;
@@ -23,16 +24,24 @@ const TabsLayout = (props) => {
     <Layout
       style={{
         minHeight: "100vh",
+        
       }}
+    
     >
+      <div style={{
+        backgroundColor: 'green',
+       }}>
       <Sider
         collapsible
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
-        
+        style={{
+          backgroundColor: 'green',
+         }}
       >
-        <div className="demo-logo-vertical" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]} >
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}  style={{
+        backgroundColor: 'green', color:'white'
+       }}>
           <Menu.Item key="1">
             <Link to="/dashboard">
               <span>
@@ -62,7 +71,7 @@ const TabsLayout = (props) => {
               <Link to="/savings">
                 <span>
                   <UserOutlined />
-                  <span>Saving Account</span>
+                  <span>Savings</span>
                 </span>{" "}
               </Link>
             </Menu.Item>
@@ -70,7 +79,7 @@ const TabsLayout = (props) => {
               <Link to="/cryptocurrency">
                 <span>
                   <UserOutlined />
-                  <span>Cryptocurrency</span>
+                  <span>Investment</span>
                 </span>{" "}
               </Link>
             </Menu.Item>
@@ -103,6 +112,7 @@ const TabsLayout = (props) => {
           </Menu.Item>
         </Menu>
       </Sider>
+      </div>
       <Layout>
         <Content
           style={{

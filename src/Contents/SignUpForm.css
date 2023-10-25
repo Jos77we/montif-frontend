@@ -1,0 +1,46 @@
+.form-layout{
+    height: 99vh;
+    border: 1px solid black;
+    display: flex;
+    grid-template-columns: auto;
+    background-color: rgba(95, 196, 84, 0.774);
+}
+
+.form-display{
+    height: 99vh;
+    width: 50%;
+    background-image: url('../images/Free_Vector___Investing_concept_illustration-removebg-preview.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.form-input{
+    height: 85vh;
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 35px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 8px 0 rgba(22, 36, 36, 0.79);
+}
+
+.form-input:hover{
+    border: 2px solid rgba(0, 0, 255, 0.562);
+}
+
+.input-layout{
+    border-radius: 4px; 
+    border:1px solid grey; 
+    background-color: rgba(221, 221, 221, 0.548);
+    height: 30px;
+    width: 65%; 
+    margin-top: -5px;
+}
+
+.input-text{
+    margin-top: 0px; 
+    font-size: 0.8rem; 
+    font-weight: 600;
+}

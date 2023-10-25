@@ -1,9 +1,10 @@
 .card-balance{
-    height: 180px;
+    height: 240px;
     width: 98%;
-    background-image: url('../images/Illustration\ for\ cryptocurrency.png');
-    background-position: center;
-    background-size: cover;
+    /* background-image: url('../images/Illustration\ for\ cryptocurrency.png'); */
+    /* background-position: center;
+    background-size: cover; */
+    background: linear-gradient(180deg, rgb(5, 3, 95) , rgb(248, 248, 248) 160%);
     border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
@@ -21,13 +22,29 @@
     column-gap: 50px;
 }
 
-.card{
+.card-back1, .card-back2, .card-back3{
     height: 200px;
     width: 400px;
-    background-color: coral;
+    /* background-color: coral; */
     border-radius: 16px;
 }
 
+.card-back1{
+    background-image: url('../images/30b0c9fc-7d32-49a1-9502-672b09cb41ea.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.card-back2{
+    background-image: url('../images/Component\ 1\ \(1\).png');
+    background-position: center;
+    background-size: cover;
+}
+
+.card-back3{
+    background-image: url('../images/Revolut\ Brand\ —\ blond\ —\ Industrial\ Design\ and\ Product\ Design\ —\ London.jpg');
+    background-position: center;
+    background-size: cover;
+}
 .layoutOutline{
     height: 400px;
     margin-top: 10px;
@@ -35,22 +52,77 @@
     grid-template-columns: auto;
     column-gap: 20px;
 }
-.credit{
+
+.credit-box{
     height: 320px;
     border-radius: 4px;
     background-color: white;
+  
+
 }
+.credit{
+    height: 280px;
+    border-radius: 4px;
+    background-color: white;
+    overflow-y: auto;
+   
+    
+}
+
+.credit::-webkit-scrollbar{
+    width: 6px;
+}
+
+.credit::-webkit-scrollbar-thumb{
+    border-radius: 6px;
+    height: 20px;
+    background-color: black;
+}
+
 
 .activity{
     height: 70px;
     background-color: white;
     margin-top: 10px;
     border-radius: 4px;
+    display: flex;
+    grid-template-columns: auto;
+    column-gap: 40px;
+    align-items: center;
 }
 .calender{
     height: 350px;
     width: 35%;
     border: 1px solid black;
     margin-top: 20px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 rgba(22, 36, 36, 0.79);
     
+}
+
+.transact{
+    height: 45px;
+    width: 160px;
+    display: flex;
+    margin-left: 10px;
+    border-radius: 6px;
+    background-color: rgba(228, 227, 227, 0.788);
+}
+
+.transact:hover{
+    border: 2px solid rgb(26, 26, 184);
+}
+
+.transaction{
+    height: 45px;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    background-color: rgba(236, 236, 236, 0.829);
+    border-radius: 4px;
+    display: flex;
+    grid-template-columns: auto;
+    column-gap: 10px;
 }

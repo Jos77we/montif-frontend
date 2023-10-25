@@ -1,8 +1,49 @@
-import React from "react";
+import React, {useState, useContext} from "react";
+import axios from 'axios'
+import { useNavigate } from "react-router-dom";
+import {Button} from 'antd'
+import DataContext from '../dataProvider/DataContext';
 
 const LoginLayout = () => {
+
+   const { setData } = useContext(DataContext)
+  const [name, setName] = useState(' ')
+  const [email, setEmail] = useState(' ')
+  const [password, setPassword] = useState(' ')
+
+  const url = "http://localhost:5000/montif/newUser/login"
+  const nav = useNavigate();
+
+const handleLogin = async (e) => {
+  e.preventDefault()
+  const formData = new FormData();
+  formData.append("name", name)
+  formData.append("email", email)
+  formData.append("password", password)
+
+  try {
+    const res = await axios.post(url, formData, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+ 
+    const { name, idNo } = res.data;
+    setData({ name, idNo });
+    if(res.status === 200){
+    nav("/dashboard")
+    }
+   
+
+  } catch (error) {
+    alert("Error occured")
+  }
+} 
+
   return (
+   
     <>
+    <form onSubmit={(e) => handleLogin(e)}>
       <div
         style={{
           height: "400px",
@@ -23,8 +64,11 @@ const LoginLayout = () => {
             borderBottom: "2px solid white",
             marginTop: "40px",
             backgroundColor: "rgba(146, 146, 146, 0.30)",
+            outline:'none'
           }}
           placeholder="Name"
+          type="text"
+          onChange={(e) => setName(e.target.value)}
         />
 
         <input
@@ -36,7 +80,11 @@ const LoginLayout = () => {
             borderBottom: "2px solid white",
             marginTop: "40px",
             backgroundColor: "rgba(146, 146, 146, 0.30)",
+            outline:'none'
           }}
+          placeholder="Email"
+          type="text"
+          onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
@@ -48,14 +96,19 @@ const LoginLayout = () => {
             borderBottom: "2px solid white",
             marginTop: "40px",
             backgroundColor: "rgba(146, 146, 146, 0.30)",
+            outline:'none'
           }}
+          placeholder="Password"
+          type="text"
+          onChange={(e) => setPassword(e.target.value)}
         />
         <div style={{marginTop:'50px'}}>
-          <a href='/dashboard'>
-          <button style={{height:'30px', width:'80%', marginLeft:'40px', border:'none', backgroundColor:'blue', color:'white', borderRadius:'4px'}}>Sign-in</button>
-          </a>
+          
+          <Button style={{height:'30px', width:'80%', marginLeft:'40px', border:'none', backgroundColor:'blue', color:'white', borderRadius:'4px'}} type="primary" htmlType="submit">Sign-in</Button>
+          
         </div>
       </div>
+      </form>
     </>
   );
 };
