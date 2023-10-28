@@ -4,7 +4,7 @@
     /* background-image: url('../images/Illustration\ for\ cryptocurrency.png'); */
     /* background-position: center;
     background-size: cover; */
-    background: linear-gradient(180deg, rgb(5, 3, 95) , rgb(248, 248, 248) 160%);
+    background: linear-gradient(180deg, rgb(3, 114, 53) , rgb(248, 248, 248) 160%);
     border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
@@ -91,7 +91,7 @@
     align-items: center;
 }
 .calender{
-    height: 350px;
+    height: 380px;
     width: 35%;
     border: 1px solid black;
     margin-top: 20px;
@@ -105,6 +105,7 @@
     height: 45px;
     width: 160px;
     display: flex;
+    align-items: center;
     margin-left: 10px;
     border-radius: 6px;
     background-color: rgba(228, 227, 227, 0.788);

@@ -7,6 +7,7 @@ import {HiOutlineMail} from 'react-icons/hi'
 import {MdOutlineNotificationsActive} from 'react-icons/md'
 import {FiLogOut} from 'react-icons/fi'
 import './IntroCard.css'
+import ApiRender from "../apiFetch/ApiRender";
 
 const { Sider, Content} = Layout;
 const { SubMenu } = Menu;
@@ -39,6 +40,7 @@ const TabsLayout = (props) => {
           backgroundColor: 'green',
          }}
       >
+        <ApiRender/>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}  style={{
         backgroundColor: 'green', color:'white'
        }}>

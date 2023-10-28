@@ -1,16 +1,13 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import './CardContent.css'
-import DataContext from '../dataProvider/DataContext';
-import GenTransaction from '../autoGenerate/GenTransaction';
- import {CreditCardOutlined} from '@ant-design/icons'
+ import {CreditCardOutlined, MoneyCollectOutlined, ScheduleOutlined } from '@ant-design/icons'
  import axios from 'axios'
-import ApiRender from '../apiFetch/ApiRender';
+import AccountFetch from '../apiFetch/AccountFetch';
+import CardFetch from '../apiFetch/CardFetch';
 
 const CardContent = () => {
-  const { data } = useContext(DataContext);
-  const { name, idNo } = data;
-
-  const [result, setResult] = useState([])
+ 
+ const [result, setResult] = useState([])
 
 
   useEffect(() => {
@@ -29,8 +26,7 @@ const CardContent = () => {
     <div className='card-balance'>
       <p>CardContent</p>
       <div style={{height:'180px', width:"90%", display:'flex', gridTemplateColumns:'auto', columnGap:'20px'}}>
-        <div style={{height: '160px', width: '300px', backgroundColor:'blue'}}></div>
-        <div style={{height: '160px', width: '300px', backgroundColor:'blue'}}></div>
+        <AccountFetch/>
       </div>
       </div>
     {/* <div className='card-back'>
@@ -67,25 +63,32 @@ const CardContent = () => {
         <div className='activity'>
           <div className='transact'>
             <div>
-              <p>New transaction</p>
+              <p style={{marginLeft:'10px'}}>New transaction</p>
               </div>
-            <div>
-              <CreditCardOutlined/>
+            <div >
+              <CreditCardOutlined style={{marginLeft:'15px', fontSize:'20px'}}/>
             </div>
             
           </div>
           <div className='transact'>
-            <p>Withdraw</p>
+            <p style={{marginLeft:'10px'}}>Withdraw</p>
+            <div>
+              <MoneyCollectOutlined style={{marginLeft:'15px', fontSize:'20px'}}/>
+            </div>
           </div>
-          <div className='transact'></div>
+          <div className='transact'>
+            <p style={{marginLeft:'10px'}}>Subscription</p>
+            <div>
+            <ScheduleOutlined style={{marginLeft:'15px', fontSize:'20px'}}/>
+            </div>
+          </div>
         </div>
       </div>
       <div className='calender'>
-      <p>Name: {name}</p>
-      <p>ID: {idNo}</p>
-      <GenTransaction/>
-      <ApiRender/>
-      <p>Subscriptions</p>
+       <p style={{marginTop:"5px", marginLeft:'20px', fontWeight:'600', fontSize:'1.2rem'}}>Available cards</p>
+       <div style={{marginTop:'50px'}}>
+       <CardFetch/>
+       </div>
       </div>
     </div>
     </>
