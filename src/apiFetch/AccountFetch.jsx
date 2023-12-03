@@ -7,7 +7,7 @@ const AccountFetch = () => {
     const { idNo } = data;
 
     const [accounts, setAccounts] = useState([])
-
+    console.log(idNo)
     useEffect(() => {
       const fetchData = async() =>{
         try {
@@ -26,14 +26,14 @@ const AccountFetch = () => {
   return (
     <>
     
-    {Array.isArray(accounts) && accounts.map((items, index) => (
-        <div style={{height: '160px', width: '300px', borderRight:'2px solid black'}} key={index}>
-            <p style={{fontSize:'1.3rem', fontWeight:'600', color:'white', marginLeft:'25px'}}>{items.accountName}</p>
-            <p style={{fontSize:'0.8rem', fontWeight:'600', color:'white', marginLeft:'25px'}}>A/C  {items.accountNo}</p>
-            <p style={{fontSize:'1.6rem', fontWeight:'600', color:'white', marginLeft:'25px', marginTop:'-6px'}}>{items.amount}</p>
-            <p style={{marginTop:'-12px', fontWeight:'500', marginLeft:'10px'}}>{items.status}</p>
+    {accounts && (
+        <div style={{height: '160px', width: '300px', borderRight:'2px solid black'}}>
+            <p style={{fontSize:'1.3rem', fontWeight:'600', color:'white', marginLeft:'25px'}}>{accounts.accountName}</p>
+            <p style={{fontSize:'0.8rem', fontWeight:'600', color:'white', marginLeft:'25px'}}>A/C  {accounts.accountNo}</p>
+            <p style={{fontSize:'1.6rem', fontWeight:'600', color:'white', marginLeft:'25px', marginTop:'-6px'}}>{accounts.amount}</p>
+            <p style={{marginTop:'-12px', fontWeight:'500', marginLeft:'10px'}}>{accounts.status}</p>
         </div>
-    ))}
+    )}
    
     </>
   )

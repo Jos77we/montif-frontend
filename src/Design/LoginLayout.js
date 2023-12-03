@@ -27,7 +27,7 @@ const handleLogin = async (e) => {
         "Content-Type": "application/json",
       },
     })
- 
+ console.log(res.data)
     const { name, idNo } = res.data;
     setData({ name, idNo });
     if(res.status === 200){

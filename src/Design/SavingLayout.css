@@ -1,0 +1,102 @@
+.saving-outline{
+  height: 90vh;
+  border: 1px red solid;
+  display: flex;
+  grid-template-columns: auto;
+  column-gap: 10px;
+ 
+}
+.type-layout{
+    height: 86vh;
+    border: 2px black solid;
+    width: 70%;
+    
+}
+.category-layout{
+    height: 86vh;
+    border: 1px green solid;
+    width: 30%;
+   
+}
+.type-top-outline-cont{
+    height: 40%;
+    width: 100%; 
+    border: 1px crimson solid;
+}
+.type-top-outline{
+  height: 85%;
+  width: 100%; 
+  position: relative;
+  border: 1px blue solid;
+  display: flex; 
+  align-items: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.type-top-outline::-webkit-scrollbar {
+    width: 0;
+    background-color: transparent;
+  }
+.type-arrow{
+    height: 30px;
+    border: 1px violet solid;
+    position: relative;
+}
+.type-bottom-outline{
+    height: 55%;
+    border: 1px gold solid;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+.category-notification{
+    height: 15%;
+    border: 1px purple solid;
+}
+
+.category-major-activity{
+    height: 40%;
+    border: 1px orange solid;
+    margin-top: 10px;
+}
+.category-subscription{
+    height: 40%;
+    border: 1px violet solid;
+    margin-top: 10px;
+}
+.type-boxes{
+    height: 150px;
+    min-width: 200px;
+    border: 1px black solid;
+    margin-left: 15px;
+    border-radius: 6px;
+}
+
+.scroll-left,
+.scroll-right {
+    top: 50%;
+ position: absolute;
+ transform: translateY(-50%);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.scroll-left {
+  left: 5px;
+}
+
+.scroll-right {
+  right: 5px;
+}
+
+.category-card{
+    height: 95%;
+    width: 70%;
+    border: 2px black solid;
+    margin-left: 50px;
+    border-radius: 6px;
+}

@@ -1,8 +1,10 @@
 import React from 'react'
+import TabsLayout from '../Design/TabsLayout'
+import SavingLayout from '../Design/SavingLayout'
 
 const Savings = () => {
   return (
-    <div>Savings</div>
+  <TabsLayout content={<SavingLayout/>}/>
   )
 }
 

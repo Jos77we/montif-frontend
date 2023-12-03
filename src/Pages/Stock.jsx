@@ -1,8 +1,11 @@
 import React from 'react'
+import CardFetch from '../apiFetch/CardFetch'
 
 const Stock = () => {
   return (
-    <div>Stock</div>
+    <div>
+      <CardFetch/>
+    </div>
   )
 }
 
