@@ -4,11 +4,12 @@ import './CardContent.css'
  import axios from 'axios'
 import AccountFetch from '../apiFetch/AccountFetch';
 import CardFetch from '../apiFetch/CardFetch';
+import PopupWin from '../Design/PopupWin'
 
 const CardContent = () => {
  
  const [result, setResult] = useState([])
-
+ const [openWin, setOpenWin] = useState(false)
 
   useEffect(() => {
     axios.get('http://localhost:5000/montif/transactions/all-transactions')
@@ -61,7 +62,7 @@ const CardContent = () => {
     </div>
         </div>
         <div className='activity'>
-          <div className='transact'>
+          <div className='transact' onClick={() => setOpenWin(true)}>
             <div>
               <p style={{marginLeft:'10px'}}>New transaction</p>
               </div>
@@ -70,7 +71,8 @@ const CardContent = () => {
             </div>
             
           </div>
-          <div className='transact'>
+          <PopupWin open={openWin} onClose={() => setOpenWin(false)}/>
+          <div className='transact' >
             <p style={{marginLeft:'10px'}}>Withdraw</p>
             <div>
               <MoneyCollectOutlined style={{marginLeft:'15px', fontSize:'20px'}}/>

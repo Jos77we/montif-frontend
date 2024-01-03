@@ -1,13 +1,12 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import DataContext from "../dataProvider/DataContext";
-import '../Design/SavingLayout.css'
 import axios from "axios";
 
-const AccountDetail = () => {
+const AccountDetailTest = () => {
   const { data } = useContext(DataContext);
   const { idNo } = data;
-
   const [bigData, setBigData] = useState([]);
+
   useEffect(() => {
     const fetchDetails = async () => {
       try {
@@ -24,21 +23,14 @@ const AccountDetail = () => {
     };
     fetchDetails();
   }, [idNo]);
-  // console.log(details)
+
   return (
     <>
-      <div style={{ display: "flex", columnGap: "20px" }}>
+      <div style={{ display: "flex", columnGap: "10px" }}>
         {bigData.map((details) => (
           <div
             key={details._id}
-            style={{
-              border: "1px solid black",
-              height: "95%",
-              width: "300px",
-              marginLeft: "10px",
-              borderRadius: "6px",
-              backgroundColor: "rgb(202, 116, 4)",
-            }}
+            style={{ border: "1px solid black", height: "100%", width: "70%" }}
           >
             <div>
               {/* Render your data here */}
@@ -46,21 +38,37 @@ const AccountDetail = () => {
                 style={{
                   fontSize: "1.2rem",
                   marginLeft: "10px",
-                  fontWeight: "600",
-                  color:'white'
+                  fontWeight: "700",
                 }}
               >
                 {details.accountName}
               </p>
               <div style={{ height: "160px", border: "1px blue solid" }}>
-                <div className="category-pp">
-                  <div className="category-card"></div>
+                <div
+                  style={{
+                    height: "80px",
+                    width: "90%",
+                    border: "1px blue solid",
+                    display: "flex",
+                    columnGap: "5px",
+                    alignItems: "center",
+                    marginLeft: "20px",
+                  }}
+                >
+                  <div
+                    style={{
+                      height: "40px",
+                      width: "40px",
+                      borderRadius: "50%",
+                      backgroundColor: "grey",
+                      marginLeft: "10px",
+                    }}
+                  ></div>
                   <div
                     style={{
                       height: "65px",
-                      width: "3px",
+                      width: "5px",
                       backgroundColor: "black",
-                      borderRadius: '4px'
                     }}
                   ></div>
                   <div>
@@ -69,14 +77,31 @@ const AccountDetail = () => {
                   </div>
                 </div>
 
-                <div className="category-pp">
-                  <div className="category-card"></div>
+                <div
+                  style={{
+                    height: "80px",
+                    width: "90%",
+                    border: "1px blue solid",
+                    display: "flex",
+                    columnGap: "40px",
+                    alignItems: "center",
+                    marginLeft: "20px",
+                  }}
+                >
+                  <div
+                    style={{
+                      height: "40px",
+                      width: "40px",
+                      borderRadius: "50%",
+                      backgroundColor: "grey",
+                      marginLeft: "20px",
+                    }}
+                  ></div>
                   <div
                     style={{
                       height: "65px",
-                      width: "3px",
+                      width: "5px",
                       backgroundColor: "black",
-                      borderRadius:'4px'
                     }}
                   ></div>
                   <div>
@@ -121,4 +146,4 @@ const AccountDetail = () => {
   );
 };
 
-export default AccountDetail;
+export default AccountDetailTest;

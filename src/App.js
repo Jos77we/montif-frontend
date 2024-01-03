@@ -9,6 +9,7 @@ import Insurance from "./Pages/Insurance";
 import Savings from "./Pages/Savings";
 import SignUp from "./Pages/SignUp"
 import Stock from "./Pages/Stock";
+import Popup from "./Pages/Popup";
 
 
 
@@ -26,6 +27,7 @@ function App() {
     <Route path="/insurance" element={<Insurance/>}/>
     <Route path="/savings" element={<Savings/>}/>
     <Route path="/stock" element={<Stock/>}/>
+    <Route path="/popup" element={<Popup/>}/>
 
     
    </Routes>
