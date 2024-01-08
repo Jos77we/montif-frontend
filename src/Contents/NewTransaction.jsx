@@ -27,10 +27,12 @@ const NewTransaction = () => {
                 border: "none",
                 borderBottom: "2px solid white",
                 backgroundColor: "rgba(146, 146, 146, 0.30)",
-                outline: "none",
+
               }}
             >
-              <GenTransaction />
+              <div style={{textAlign:'center', padding:'10px'}}>
+              <GenTransaction/>
+              </div>
             </div>
           </div>
           <div>
