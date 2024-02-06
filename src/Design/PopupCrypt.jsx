@@ -1,9 +1,9 @@
 import React from 'react'
 import '../Design/PopupWin.css'
-import NewTransaction from '../Contents/NewTransaction'
 import { IoClose } from "react-icons/io5";
+import NewCryptWithdraw from '../Contents/NewCryptWithdraw';
 
-const PopupWin = ({open, onClose}) => {
+const PopupCrypt = ({open, onClose}) => {
     if(!open) return null
   return (
     <>
@@ -12,10 +12,10 @@ const PopupWin = ({open, onClose}) => {
        <div></div>
     <div onClick={onClose} style={{marginTop:'10px'}}><IoClose style={{fontSize:'20px'}}/></div>
     </div>
-    <NewTransaction/>
+    <NewCryptWithdraw/>
     </div>
     </>
   )
 }
 
-export default PopupWin
+export default PopupCrypt

@@ -2,6 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 import DataContext from "../dataProvider/DataContext";
 import '../Design/SavingLayout.css'
 import axios from "axios";
+import { FaRegCreditCard } from "react-icons/fa6";
+import { RiAccountCircleLine } from "react-icons/ri";
 
 const AccountDetail = () => {
   const { data } = useContext(DataContext);
@@ -32,12 +34,12 @@ const AccountDetail = () => {
           <div
             key={details._id}
             style={{
-              border: "1px solid black",
-              height: "95%",
-              width: "300px",
+              height: "350px",
+              width: "280px",
               marginLeft: "10px",
-              borderRadius: "6px",
-              backgroundColor: "rgb(202, 116, 4)",
+              borderRadius: "12px",
+              background: "#D6E8EE",
+              boxShadow:"0 2px 8px 0 rgba(22, 36, 36, 0.79)"
             }}
           >
             <div>
@@ -47,14 +49,15 @@ const AccountDetail = () => {
                   fontSize: "1.2rem",
                   marginLeft: "10px",
                   fontWeight: "600",
-                  color:'white'
                 }}
               >
                 {details.accountName}
               </p>
-              <div style={{ height: "160px", border: "1px blue solid" }}>
+              <div style={{ height: "160px"}}>
                 <div className="category-pp">
-                  <div className="category-card"></div>
+                  <div className="category-card">
+                  <FaRegCreditCard style={{fontSize:'22px', color:'white'}}/>
+                  </div>
                   <div
                     style={{
                       height: "65px",
@@ -70,7 +73,9 @@ const AccountDetail = () => {
                 </div>
 
                 <div className="category-pp">
-                  <div className="category-card"></div>
+                  <div className="category-card">
+                    <RiAccountCircleLine style={{fontSize:'22px', color:'white'}}/>
+                  </div>
                   <div
                     style={{
                       height: "65px",
@@ -88,26 +93,24 @@ const AccountDetail = () => {
             </div>
             <div
               style={{
-                height: "80px",
-                border: "1px black solid",
-                width: "70%",
-                display: "flex",
-                marginLeft: "30px",
-                marginTop: "10px",
+                height: "70px",
+                // border: "1px black solid",
+                width: "80%",
+                marginLeft: "20px",
+                marginTop: "25px",
+                borderRadius:'16px'
               }}
             >
-              <div
-                style={{
-                  height: "80px",
-                  width: "10px",
-                  border: "1px red solid",
-                }}
-              ></div>
+              <div style={{height:'30px', display: "flex", columnGap:'45%'}}>
               <div>
-                <p>{details.amount}</p>
+                <p style={{fontWeight:'600'}}>Balance</p>
               </div>
               <div>
-                <p>{details.status}</p>
+                <p style={{color:'green'}}>{details.amount}</p>
+              </div>
+              </div>
+              <div>
+                <p style={{color:'red', fontWeight:'700'}}>{details.status}</p>
               </div>
             </div>
             {/* <div>

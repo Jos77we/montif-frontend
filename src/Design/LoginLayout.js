@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import {Button} from 'antd'
 import DataContext from '../dataProvider/DataContext';
+import { LoadingOutlined } from "@ant-design/icons";
 
 const LoginLayout = () => {
 
@@ -10,6 +11,7 @@ const LoginLayout = () => {
   const [name, setName] = useState(' ')
   const [email, setEmail] = useState(' ')
   const [password, setPassword] = useState(' ')
+  const [load, setLoad] = useState('Sign-in')
 
   const url = "http://localhost:5000/montif/newUser/login"
   const nav = useNavigate();
@@ -22,6 +24,7 @@ const handleLogin = async (e) => {
   formData.append("password", password)
 
   try {
+    setLoad(<LoadingOutlined />)
     const res = await axios.post(url, formData, {
       headers: {
         "Content-Type": "application/json",
@@ -30,6 +33,7 @@ const handleLogin = async (e) => {
  console.log(res.data)
     const { name, idNo } = res.data;
     setData({ name, idNo });
+    
     if(res.status === 200){
     nav("/dashboard")
     }
@@ -102,9 +106,9 @@ const handleLogin = async (e) => {
           type="text"
           onChange={(e) => setPassword(e.target.value)}
         />
-        <div style={{marginTop:'50px'}}>
+        <div style={{marginTop:'50px'}} >
           
-          <Button style={{height:'30px', width:'80%', marginLeft:'40px', border:'none', backgroundColor:'blue', color:'white', borderRadius:'4px'}} type="primary" htmlType="submit">Sign-in</Button>
+          <Button style={{height:'30px', width:'80%', marginLeft:'40px', border:'none', backgroundColor:'blue', color:'white', borderRadius:'4px'}} type="primary" htmlType="submit" >{load}</Button>
           
         </div>
       </div>

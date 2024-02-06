@@ -4,7 +4,7 @@
     /* background-image: url('../images/Illustration\ for\ cryptocurrency.png'); */
     /* background-position: center;
     background-size: cover; */
-    background: linear-gradient(180deg, rgb(3, 114, 53) , rgb(248, 248, 248) 160%);
+    background: linear-gradient(72deg,#141747 , #4CA9DF 100%);
     border-radius: 8px;
     margin-left: auto;
     margin-right: auto;
@@ -61,11 +61,11 @@
 
 }
 .credit{
-    height: 280px;
+    height: 220px;
     border-radius: 4px;
     background-color: white;
     overflow-y: auto;
-   
+    margin-top: 40px;
     
 }
 

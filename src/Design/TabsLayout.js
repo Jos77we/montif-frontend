@@ -30,19 +30,19 @@ const TabsLayout = (props) => {
     
     >
       <div style={{
-        backgroundColor: 'green',
+        backgroundColor: '#132D45',
        }}>
       <Sider
         collapsible
         collapsed={collapsed}
         onCollapse={(value) => setCollapsed(value)}
         style={{
-          backgroundColor: 'green',
+          backgroundColor: '#132D45',
          }}
       >
         <ApiRender/>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}  style={{
-        backgroundColor: 'green', color:'white'
+        backgroundColor: '#132D45', color:'white'
        }}>
           <Menu.Item key="1">
             <Link to="/dashboard">
@@ -133,7 +133,8 @@ const TabsLayout = (props) => {
             style={{
               padding: '0px 24px',
               minHeight: 600,
-              background: 'linear-gradient(-90deg, rgba(10, 218, 20, 0.705) , rgba(10, 241, 33, 0.219) 100% )',
+              // background: 'linear-gradient(-90deg, rgba(10, 218, 20, 0.705) , rgba(10, 241, 33, 0.219) 100% )',
+              background: '#00C04b'
             }}
           >
             <div>

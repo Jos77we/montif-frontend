@@ -31,7 +31,7 @@ const AccountFetch = () => {
             <p style={{fontSize:'1.3rem', fontWeight:'600', color:'white', marginLeft:'25px'}}>{accounts.accountName}</p>
             <p style={{fontSize:'0.8rem', fontWeight:'600', color:'white', marginLeft:'25px'}}>A/C  {accounts.accountNo}</p>
             <p style={{fontSize:'1.6rem', fontWeight:'600', color:'white', marginLeft:'25px', marginTop:'-6px'}}>{accounts.amount}</p>
-            <p style={{marginTop:'-12px', fontWeight:'500', marginLeft:'10px'}}>{accounts.status}</p>
+            <p style={{marginTop:'-12px', fontWeight:'500', marginLeft:'10px', color:'red'}}>{accounts.status}</p>
         </div>
     )}
    
