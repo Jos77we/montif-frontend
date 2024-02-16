@@ -12,7 +12,7 @@ const CardFetch = () => {
     useEffect(() => {
      const fetchApi = async () => {
        try {
-        const res = await axios.get("http://localhost:5000/montif/card/card-owner", {
+        const res = await axios.get("https://montif-backend.onrender.com/montif/card/card-owner", {
             params: {idNo}
         })
         setResults(res.data)

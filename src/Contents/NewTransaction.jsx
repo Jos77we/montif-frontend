@@ -1,8 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "../Design/PopupWin.css";
 import axios from "axios";
-import ReceiverId from "../autoGenerate/ReceiverId";
-//import GenTransaction from "../autoGenerate/GenTransaction";
+// import ReceiverId from "../autoGenerate/ReceiverId";
+// import GenTransaction from "../autoGenerate/GenTransaction";
 import DataContext from "../dataProvider/DataContext";
 import { Button } from "antd";
 import { LoadingOutlined } from "@ant-design/icons";
@@ -11,13 +11,6 @@ const NewTransaction = () => {
   const { data } = useContext(DataContext);
   const { name } = data;
   const { idNo } = data;
-
-  // console.log(recId)
-  // console.log(transId)
-
-  // const genId = GenTransaction();
-
-  const [randomCharacters, setRandomCharacters] = useState(" ");
 
   const s1 = [
     "A","B","C","D","E","F","G","H","I","J","K","L",
@@ -34,7 +27,23 @@ const NewTransaction = () => {
   let x = Math.floor(Math.random() * 1000 + 25);
   let y = Math.floor(Math.random() * 100 + 15);
 
-  useEffect(() => {
+  let s = Math.floor(Math.random() * 1000 + 15);
+  let p = Math.floor(Math.random() * 500 + 25);
+
+  const [formData, setFormData] = useState({
+    name: name,
+    idNo: idNo,
+    recieverId: "",
+    transactionId: "",
+    amount: "",
+    accountNo: "",
+    receiverAccountNo: "",
+    typeOfTransaction: "",
+  });
+
+  const [recId, setRecId] = useState('')
+  const [transId, setTransId] = useState('')
+  
     // Function to generate random characters
     const generateRandomCharacters = () => {
       const getRandomChars = () => {
@@ -57,26 +66,41 @@ const NewTransaction = () => {
 
       const randomChars = getRandomChars();
       const randomCs = getRandomCs();
-      const generatedRandomCharacters = randomChars + x + randomCs + y;
-      setRandomCharacters(generatedRandomCharacters);
+      const generatedRandomChar = randomChars + x + randomCs + y;
+      const generateTransChar = randomChars + s + randomCs + p;
+      setFormData((prevState) => ({
+        ...prevState,
+        recieverId: generatedRandomChar,
+        transactionId: generateTransChar
+      }))
+      
+      setRecId(generatedRandomChar);
+      setTransId(generateTransChar)
     };
+    // const generateRandomChar = (characters) => {
+    //   const randomIndex = Math.floor(Math.random() * characters.length);
+    //   return characters[randomIndex];
+    // };
+  
+    // const generateRandomCharacters = () => {
+    //   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    //   let generatedRandomChar = "";
+  
+    //   for (let i = 0; i < 4; i++) {
+    //     generatedRandomChar += generateRandomChar(alphabet);
+    //   }
+  
+    //   setFormData((prevState) => ({
+    //     ...prevState,
+    //     recieverId: generatedRandomChar,
+    //   }));
+    // };
+  
 
+  useEffect(() => {
     generateRandomCharacters();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // No dependency array
-
-  const [formData, setFormData] = useState({
-    name: name,
-    idNo: idNo,
-    receiverId: randomCharacters,
-    transactionId: ReceiverId(),
-    amount: "",
-    accountNo: "",
-    receiverAccountNo: "",
-    typeOfTransaction: "",
-  });
-
-  const transactionCharacters = ReceiverId();
+  }, []);
 
   const [load, setLoad] = useState("Submit");
 
@@ -85,12 +109,13 @@ const NewTransaction = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: value
+      
     });
     console.log(formData);
   };
 
-  const url = "http://localhost:3000";
+  const url = "http://localhost:5000/montif/transactions/new-transaction";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -105,6 +130,7 @@ const NewTransaction = () => {
 
       if (res.status === 200) {
         alert("Transaction successful");
+        setLoad("Submit");
       }
     } catch (error) {
       alert("Error Occured");
@@ -146,7 +172,7 @@ const NewTransaction = () => {
           >
             <div style={{ marginTop: "10px" }}>
               <p style={{ marginLeft: "20px", fontWeight: "600" }}>
-                Transaction ID{" "}
+                Transaction ID
               </p>
               <div
                 style={{
@@ -165,7 +191,7 @@ const NewTransaction = () => {
                     fontWeight: "700",
                   }}
                 >
-                  {randomCharacters}
+                 {transId}
                 </div>
               </div>
             </div>
@@ -192,7 +218,7 @@ const NewTransaction = () => {
                     fontWeight: "700",
                   }}
                 >
-                  <ReceiverId />
+                  {recId}
                 </div>
               </div>
             </div>

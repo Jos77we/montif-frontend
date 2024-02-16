@@ -14,7 +14,7 @@ const AccountDetail = () => {
     const fetchDetails = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/montif/accounts/detail-accounts",
+          "https://montif-backend.onrender.com/montif/accounts/detail-accounts",
           {
             params: { idNo },
           }

@@ -12,7 +12,7 @@ const ApiRender = () => {
     const fetchData = async () =>{
     try {
       const res = await axios.get(
-        "http://localhost:5000/montif/newUser/logged-user",
+        "https://montif-backend.onrender.com/montif/newUser/logged-user",
         {
           params: { idNo },
         }

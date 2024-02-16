@@ -17,7 +17,7 @@ const CardContent = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/montif/transactions/all-transactions")
+      .get("https://montif-backend.onrender.com/montif/transactions/all-transactions")
       .then((response) => {
         setResult(response.data);
       })

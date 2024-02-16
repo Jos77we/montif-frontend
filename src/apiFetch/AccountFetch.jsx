@@ -11,7 +11,7 @@ const AccountFetch = () => {
     useEffect(() => {
       const fetchData = async() =>{
         try {
-            const res = await axios.get("http://localhost:5000/montif/accounts/account-type", {
+            const res = await axios.get("https://montif-backend.onrender.com/montif/accounts/account-type", {
                 params:{idNo}
             })
             setAccounts(res.data)

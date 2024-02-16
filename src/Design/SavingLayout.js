@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./SavingLayout.css";
 import AccountDetail from "../apiFetch/AccountDetail";
+import PopupAcc from "./PopupAcc";
 import { MdOutlineSavings } from "react-icons/md";
 import { FaUnlock } from "react-icons/fa";
 import { FaMoneyBillTrendUp } from "react-icons/fa6";
@@ -13,6 +14,10 @@ import { FaAmazonPay } from "react-icons/fa6";
 //import AccountNo from "../autoGenerate/AccountNo";
 
 const SavingLayout = () => {
+
+  const [openWin, setOpenWin] = useState(false);
+  
+
   const containerRef = useRef(null);
 
   const handleScrollLeft = () => {
@@ -33,10 +38,7 @@ const SavingLayout = () => {
     }
   };
 
-  let x = Math.floor((Math.random() * 1000) + 25);
-  let y = Math.floor((Math.random() * 100) + 15);
-
-  const conf = x + y;
+ 
   return (
     <>
       <div className="saving-outline">
@@ -83,6 +85,7 @@ const SavingLayout = () => {
                       justifyContent: "center",
                       alignItems: "center"
                     }}
+                    onClick={() => setOpenWin(true)}
                   >
                     <MdAdd style={{fontSize:'20px', color:'white'}}/>
                   </div>
@@ -226,6 +229,7 @@ const SavingLayout = () => {
                 <div className="circle-press1"></div>
               </div>
             </div>
+            <PopupAcc open={openWin} onClose={() => setOpenWin(false)} />
           </div>
           <div className="type-bottom-outline">
             <div>
@@ -313,12 +317,19 @@ const SavingLayout = () => {
             </div>
             <div className="not-box">
               <div className="icon-enclose"></div>
+              <div style={{ minWidth: "70px" }}>
+                <p>Mortgage</p>
+              </div>
+              <p>$699.99</p>
             </div>
             <div className="not-box">
               <div className="icon-enclose"></div>
+              <div style={{ minWidth: "70px" }}>
+                <p>Insurance</p>
+              </div>
+              <p>$250.00</p>
             </div>
             <div>
-             {conf}
             </div>
           </div>
         </div>

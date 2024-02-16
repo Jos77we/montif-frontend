@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 import {Button} from 'antd'
 import DataContext from '../dataProvider/DataContext';
-import { LoadingOutlined } from "@ant-design/icons";
+import { LoadingOutlined, CloseOutlined } from "@ant-design/icons";
 
 const LoginLayout = () => {
 
@@ -13,7 +13,7 @@ const LoginLayout = () => {
   const [password, setPassword] = useState(' ')
   const [load, setLoad] = useState('Sign-in')
 
-  const url = "http://localhost:5000/montif/newUser/login"
+  const url = "https://montif-backend.onrender.com/montif/newUser/login"
   const nav = useNavigate();
 
 const handleLogin = async (e) => {
@@ -38,9 +38,9 @@ const handleLogin = async (e) => {
     nav("/dashboard")
     }
    
-
   } catch (error) {
-    alert("Error occured")
+    setLoad(<CloseOutlined color="red"/>,"Try again")
+    // alert("Error occured")
   }
 } 
 
