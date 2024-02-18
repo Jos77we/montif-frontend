@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { Layout, Menu} from "antd";
 import { Link } from "react-router-dom"; // Assuming you're using React Router for navigation
-import { UserOutlined } from "@ant-design/icons";
 import logo from '../images/Logo 500x500 px 1.png'
 import {HiOutlineMail} from 'react-icons/hi'
 import {MdOutlineNotificationsActive} from 'react-icons/md'
+import { LuLayoutDashboard, LuWallet } from "react-icons/lu";
+import { FaRegCreditCard } from "react-icons/fa";
+import { RiAccountPinCircleLine } from "react-icons/ri";
+import { AiTwotoneSafetyCertificate } from "react-icons/ai";
+import { VscGraph } from "react-icons/vsc";
 import {FiLogOut} from 'react-icons/fi'
 import './IntroCard.css'
 import ApiRender from "../apiFetch/ApiRender";
@@ -47,68 +51,50 @@ const TabsLayout = (props) => {
           <Menu.Item key="1">
             <Link to="/dashboard">
               <span>
-                <UserOutlined />
-                <span>Home </span>
-              </span>{" "}
+                <LuLayoutDashboard style={{fontSize:"18px"}}/>
+                <span style={{marginLeft:'8px'}}>Dashboard</span>
+              </span>
             </Link>
           </Menu.Item>
           <Menu.Item key="4">
             <Link to="/card">
               <span>
-                <UserOutlined />
-                <span>Card</span>
-              </span>{" "}
+                <FaRegCreditCard style={{fontSize:"18px"}}/>
+                <span style={{marginLeft:'8px'}}>Card</span>
+              </span>
             </Link>
           </Menu.Item>
           <SubMenu
             key="sub2"
             title={
               <span>
-                <UserOutlined />
-                <span>Accounts</span>
+                <RiAccountPinCircleLine style={{fontSize:"18px"}}/>
+                <span style={{marginLeft:'8px'}}>Accounts</span>
               </span>
             }
           >
             <Menu.Item key="5">
               <Link to="/savings">
                 <span>
-                  <UserOutlined />
-                  <span>Savings</span>
-                </span>{" "}
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="6">
-              <Link to="/cryptocurrency">
-                <span>
-                  <UserOutlined />
-                  <span>Investment</span>
-                </span>{" "}
-              </Link>
-            </Menu.Item>
-          </SubMenu>
-          <SubMenu
-            key="sub3"
-            title={
-              <span>
-                <UserOutlined />
-                <span>Invest</span>
-              </span>
-            }
-          >
-            <Menu.Item key="7">
-              <Link to="/stock">
-                <span>
-                  <UserOutlined />
-                  <span>Stock</span>
+                  <LuWallet style={{fontSize:"18px"}}/>
+                  <span style={{marginLeft:'8px'}}>Savings</span>
                 </span>
               </Link>
             </Menu.Item>
           </SubMenu>
-          <Menu.Item key="8">
+          <Menu.Item key="6">
+            <Link to="/cryptocurrency">
+              <span>
+                <VscGraph style={{fontSize:"18px"}}/>
+                <span style={{marginLeft:'8px'}}>Invest</span>
+              </span>
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="7">
             <Link to="/insurance">
               <span>
-                <UserOutlined />
-                <span>Insurance</span>{" "}
+                <AiTwotoneSafetyCertificate style={{fontSize:"18px"}}/>
+                <span style={{marginLeft:'8px'}}>Insurance</span>
               </span>
             </Link>
           </Menu.Item>

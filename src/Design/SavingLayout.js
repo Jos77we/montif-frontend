@@ -16,8 +16,7 @@ import { FaAmazonPay } from "react-icons/fa6";
 const SavingLayout = () => {
 
   const [openWin, setOpenWin] = useState(false);
-  
-
+  const [name, setName] = useState('');
   const containerRef = useRef(null);
 
   const handleScrollLeft = () => {
@@ -38,6 +37,11 @@ const SavingLayout = () => {
     }
   };
 
+  
+ const handleclick = (cont) => () => {
+    setName(cont);
+    setOpenWin(true);
+  };
  
   return (
     <>
@@ -46,6 +50,7 @@ const SavingLayout = () => {
           <div className="type-top-outline-cont">
             <div className="type-top-outline" ref={containerRef}>
               <div className="type-boxes">
+                <div>
                 <p
                   style={{
                     marginLeft: "10px",
@@ -55,6 +60,7 @@ const SavingLayout = () => {
                 >
                   Savings Account
                 </p>
+                </div>
                 <div
                   style={{
                     height: "40px",
@@ -62,6 +68,7 @@ const SavingLayout = () => {
                     alignItems: "center",
                     columnGap: "20px",
                   }}
+                  
                 >
                   <MdOutlineSavings
                     style={{
@@ -85,13 +92,15 @@ const SavingLayout = () => {
                       justifyContent: "center",
                       alignItems: "center"
                     }}
-                    onClick={() => setOpenWin(true)}
+                    onClick={handleclick("Saving Account")}
+                  
                   >
                     <MdAdd style={{fontSize:'20px', color:'white'}}/>
                   </div>
                 </div>
               </div>
               <div className="type-boxes">
+                <div>
                 <p
                   style={{
                     marginLeft: "10px",
@@ -101,6 +110,7 @@ const SavingLayout = () => {
                 >
                   Fixed-Deposit Account
                 </p>
+                </div>
                 <div
                   style={{
                     height: "40px",
@@ -131,12 +141,14 @@ const SavingLayout = () => {
                       justifyContent: "center",
                       alignItems: "center"
                     }}
+                    onClick={handleclick("Fixed deposit Account")}
                   >
                     <MdAdd style={{fontSize:'20px', color:'white'}}/>
                   </div>
                 </div>
               </div>
               <div className="type-boxes">
+                <div>
                 <p
                   style={{
                     marginLeft: "10px",
@@ -146,6 +158,7 @@ const SavingLayout = () => {
                 >
                   Investment Account
                 </p>
+                </div>
                 <div
                   style={{
                     height: "40px",
@@ -176,10 +189,12 @@ const SavingLayout = () => {
                       justifyContent: "center",
                       alignItems: "center"
                     }}
+                    onClick={handleclick("Investment Account")}
                   ><MdAdd style={{fontSize:'20px', color:'white'}}/></div>
                 </div>
               </div>
               <div className="type-boxes">
+                <div>
                 <p
                   style={{
                     marginLeft: "10px",
@@ -189,6 +204,7 @@ const SavingLayout = () => {
                 >
                   Insurance Account
                 </p>
+                </div>
                 <div
                   style={{
                     height: "40px",
@@ -200,7 +216,7 @@ const SavingLayout = () => {
                   <FcDataProtection
                     style={{ fontSize: "24px", marginLeft: "10px" }}
                   />
-                  <p style={{ color: "white" }}>Limitless saving</p>
+                  <p style={{ color: "white" }}>Reliable Insurance</p>
                 </div>
                 <div style={{ height: "40px" }}>
                   <div
@@ -215,6 +231,7 @@ const SavingLayout = () => {
                       justifyContent: "center",
                       alignItems: "center"
                     }}
+                    onClick={handleclick("Insurance Account")}
                   ><MdAdd style={{fontSize:'20px', color:'white'}}/></div>
                 </div>
               </div>
@@ -229,7 +246,7 @@ const SavingLayout = () => {
                 <div className="circle-press1"></div>
               </div>
             </div>
-            <PopupAcc open={openWin} onClose={() => setOpenWin(false)} />
+            <PopupAcc open={openWin} onClose={() => setOpenWin(false)} accName={name}/>
           </div>
           <div className="type-bottom-outline">
             <div>

@@ -109,10 +109,16 @@ const AccountDetail = () => {
                 <p style={{color:'green'}}>{details.amount}</p>
               </div>
               </div>
-              <div>
+              <div style={{height:'40px', display: "flex", alignItems:'center', columnGap:'45%', marginTop:'10px'}}>
+                <div>
                 <p style={{color:'red', fontWeight:'700'}}>{details.status}</p>
+                </div>
+                <div style={{height:'30px', width:'80px', borderRadius:'8px', backgroundColor:'blue', display:'flex', alignItems:'center'}}>
+                  <p>Deposit</p>
+                </div>
               </div>
             </div>
+            
             {/* <div>
           <p>{details.lastDeposit}</p>
           <p>{details.lastWithdrawal}</p>

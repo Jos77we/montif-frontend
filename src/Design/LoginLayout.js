@@ -16,6 +16,15 @@ const LoginLayout = () => {
   const url = "https://montif-backend.onrender.com/montif/newUser/login"
   const nav = useNavigate();
 
+  const errorRend = () => {
+    return(
+      <div style={{heigth:'2vh', display:'flex', justifyContent:'center', width:'100%', columnGap:'5px', marginTop:'-10px'}}>
+      <CloseOutlined style={{color:'red', fontSize:'0.8rem'}}/>
+      <p style={{color:'red', fontSize:'0.8rem'}}>Try Again</p>
+      </div>
+    )
+  }
+
 const handleLogin = async (e) => {
   e.preventDefault()
   const formData = new FormData();
@@ -39,7 +48,7 @@ const handleLogin = async (e) => {
     }
    
   } catch (error) {
-    setLoad(<CloseOutlined color="red"/>,"Try again")
+    setLoad(errorRend())
     // alert("Error occured")
   }
 } 

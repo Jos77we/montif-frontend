@@ -1,8 +1,10 @@
 import React from 'react'
+import TabsLayout from '../Design/TabsLayout'
+import Restricted from '../Contents/Restricted'
 
 const Insurance = () => {
   return (
-    <div>Insurance</div>
+    <TabsLayout content={<Restricted/>}/>
   )
 }
 
