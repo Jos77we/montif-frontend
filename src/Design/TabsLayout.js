@@ -45,7 +45,7 @@ const TabsLayout = (props) => {
          }}
       >
         <ApiRender/>
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={["1"]}  style={{
+        <Menu theme="dark" mode="inline" style={{
         backgroundColor: '#132D45', color:'white'
        }}>
           <Menu.Item key="1">

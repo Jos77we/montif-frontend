@@ -113,8 +113,8 @@ const AccountDetail = () => {
                 <div>
                 <p style={{color:'red', fontWeight:'700'}}>{details.status}</p>
                 </div>
-                <div style={{height:'30px', width:'80px', borderRadius:'8px', backgroundColor:'blue', display:'flex', alignItems:'center'}}>
-                  <p>Deposit</p>
+                <div style={{height:'30px', width:'80px', borderRadius:'8px', backgroundColor:'blue', display:'flex', alignItems:'center', justifyContent:'center'}}>
+                  <p style={{fontSize:'0.8rem', fontWeight:'600'}}>Deposit</p>
                 </div>
               </div>
             </div>

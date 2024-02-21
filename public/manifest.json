@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "Montif",
   "name": "Create React App Sample",
   "icons": [
     {
@@ -9,6 +9,11 @@
     },
     {
       "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "Logo219.png",
       "type": "image/png",
       "sizes": "192x192"
     },
