@@ -17,14 +17,14 @@ const Topbar = () => {
         <p>Service</p>
     </div>
     <div className='layout3'>
-      <Link to='/login' style={{textDecoration:'none'}}>
+      <Link to='/login' style={{textDecoration:'none', fontWeight:'600'}}>
     Login
     </Link>
-    <a href='/signUp'>
-    <button style={{height:'40px', width:'60px', borderRadius:'6px', backgroundColor:'grey', border:'none'}}>
+    <Link to='/signUp'>
+    <button style={{height:'40px', width:'70px', borderRadius:'6px', backgroundColor:'blue', border:'none', color:'white'}}>
     Sign-up
     </button>
-    </a>
+    </Link>
     </div>
     </div>
     </>
