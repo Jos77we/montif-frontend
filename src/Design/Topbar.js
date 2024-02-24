@@ -1,6 +1,7 @@
 import React from 'react'
 import './Topbar.css'
 import logo from '../images/Logo 500x500 px 1.png'
+import {Link} from 'react-router-dom'
 
 const Topbar = () => {
   return (
@@ -16,9 +17,9 @@ const Topbar = () => {
         <p>Service</p>
     </div>
     <div className='layout3'>
-      <a href='/login'>
-    <p>login</p>
-    </a>
+      <Link to='/login' style={{textDecoration:'none'}}>
+    Login
+    </Link>
     <a href='/signUp'>
     <button style={{height:'40px', width:'60px', borderRadius:'6px', backgroundColor:'grey', border:'none'}}>
     Sign-up
