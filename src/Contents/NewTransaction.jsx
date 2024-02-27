@@ -139,7 +139,7 @@ const NewTransaction = () => {
 
   return (
     <>
-      <div className="popup-input" style={{ height: "85%" }}>
+      <div className="popup-input" >
         <div
           style={{
             height: "60px",
