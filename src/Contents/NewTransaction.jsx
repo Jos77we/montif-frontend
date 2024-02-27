@@ -39,6 +39,7 @@ const NewTransaction = () => {
     accountNo: "",
     receiverAccountNo: "",
     typeOfTransaction: "",
+    accountName: "Savings Account"
   });
 
   const [recId, setRecId] = useState('')
@@ -77,25 +78,7 @@ const NewTransaction = () => {
       setRecId(generatedRandomChar);
       setTransId(generateTransChar)
     };
-    // const generateRandomChar = (characters) => {
-    //   const randomIndex = Math.floor(Math.random() * characters.length);
-    //   return characters[randomIndex];
-    // };
-  
-    // const generateRandomCharacters = () => {
-    //   const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    //   let generatedRandomChar = "";
-  
-    //   for (let i = 0; i < 4; i++) {
-    //     generatedRandomChar += generateRandomChar(alphabet);
-    //   }
-  
-    //   setFormData((prevState) => ({
-    //     ...prevState,
-    //     recieverId: generatedRandomChar,
-    //   }));
-    // };
-  
+    
 
   useEffect(() => {
     generateRandomCharacters();
@@ -115,7 +98,7 @@ const NewTransaction = () => {
     console.log(formData);
   };
 
-  const url = "http://localhost:5000/montif/transactions/new-transaction";
+  const url = "http://localhost:5000/montif/transactions/transacted";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
