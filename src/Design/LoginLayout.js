@@ -112,7 +112,7 @@ const handleLogin = async (e) => {
             outline:'none'
           }}
           placeholder="Password"
-          type="text"
+          type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
         <div style={{marginTop:'50px'}} >
