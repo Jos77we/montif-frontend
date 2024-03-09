@@ -4,6 +4,7 @@ import "../Design/SavingLayout.css";
 import axios from "axios";
 import { FaRegCreditCard } from "react-icons/fa6";
 import { RiAccountCircleLine } from "react-icons/ri";
+import PopupDeposit from "../Design/PopupDeposit";
 
 const AccountDetail = () => {
   const { data } = useContext(DataContext);
@@ -14,6 +15,8 @@ const AccountDetail = () => {
     accountNo: "",
     accountName: "",
   });
+  const [openWin, setOpenWin] = useState(false);
+
   useEffect(() => {
     const fetchDetails = async () => {
       try {
@@ -38,6 +41,7 @@ const AccountDetail = () => {
       accountNo,
       accountName,
     });
+    setOpenWin(true)
   };
 
   return (
@@ -168,6 +172,7 @@ const AccountDetail = () => {
             <p>Selected Account Name: {selectedAccount.accountName}</p>
           </div>
         )}
+        <PopupDeposit open={openWin} onClose={() => setOpenWin(false)} accountNo={selectedAccount.accountNo} accountName={selectedAccount.accountName}/>
       </div>
     </>
   );
