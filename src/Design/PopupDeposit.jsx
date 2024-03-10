@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Design/PopupWin.css'
+import {Button} from 'antd';
 
 
 const PopupDeposit = ({open, onClose, accountNo, accountName}) => {
