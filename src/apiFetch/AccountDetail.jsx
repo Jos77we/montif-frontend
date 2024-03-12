@@ -166,12 +166,12 @@ const AccountDetail = () => {
             </div>
           </div>
         ))}
-        {selectedAccount.accountNo && selectedAccount.accountName && (
+        {/* {selectedAccount.accountNo && selectedAccount.accountName && (
           <div style={{ marginTop: "20px" }}>
             <p>Selected Account No: {selectedAccount.accountNo}</p>
             <p>Selected Account Name: {selectedAccount.accountName}</p>
           </div>
-        )}
+        )} */}
         <PopupDeposit open={openWin} onClose={() => setOpenWin(false)} accountNo={selectedAccount.accountNo} accountName={selectedAccount.accountName}/>
       </div>
     </>
