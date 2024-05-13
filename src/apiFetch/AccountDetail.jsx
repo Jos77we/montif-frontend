@@ -51,7 +51,7 @@ const AccountDetail = () => {
           <div
             key={details._id}
             style={{
-              height: "350px",
+              height: "300px",
               width: "280px",
               marginLeft: "10px",
               borderRadius: "12px",
