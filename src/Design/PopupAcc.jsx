@@ -18,7 +18,7 @@ const PopupAcc = ({ open, onClose, accName }) => {
     name: name,
     idNo: idNo,
     accountNo:"",
-    accountName: accName,
+    accountName:"",
     cardNo:"",
     amount:"0.00",
     depositStamp:"",
@@ -46,8 +46,10 @@ useEffect(() => {
       setNewItem((prevState) => ({
       ...prevState,
       accountNo: sequence,
+      accountName: accName
       }))
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   const sendData = () => {
