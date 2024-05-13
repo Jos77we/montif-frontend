@@ -18,7 +18,7 @@ const PopupAcc = ({ open, onClose, accName }) => {
     name: name,
     idNo: idNo,
     accountNo:"",
-    accountName:"",
+    accountName: accName,
     cardNo:"",
     amount:"0.00",
     depositStamp:"",
@@ -46,7 +46,6 @@ useEffect(() => {
       setNewItem((prevState) => ({
       ...prevState,
       accountNo: sequence,
-      accountName: accName
       }))
     }
   }, [open]);
