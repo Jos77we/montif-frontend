@@ -39,6 +39,20 @@ const PopupAcc = ({ open, onClose, accName }) => {
 
   return result;
 };
+
+var today = new Date();
+var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+var dayOfWeek = today.getDay(); 
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var day = days[dayOfWeek];
+
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = day + date + ' ' + time;
+
+console.log("Day:", day); // Output the day of the week
+console.log("DateTime:", dateTime); // Output the date and time
+
+
 useEffect(() => {
   if (open) {
       const sequence = generateRandomNumber();
