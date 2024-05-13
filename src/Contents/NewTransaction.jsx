@@ -98,7 +98,7 @@ const NewTransaction = () => {
     console.log(formData);
   };
 
-  const url = "http://localhost:5000/montif/transactions/transacted";
+  const url = "https://montif-backend.onrender.com/montif/transactions/transacted";
 
   const handleSubmit = async (e) => {
     e.preventDefault();

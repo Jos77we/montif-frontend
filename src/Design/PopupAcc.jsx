@@ -1,12 +1,29 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import "../Design/PopupWin.css";
 import {Button} from 'antd';
+import DataContext from "../dataProvider/DataContext";
 //import NewAccount from "../Contents/NewAccount";
 
 
 
 const PopupAcc = ({ open, onClose, accName }) => {
+
+  const { data } = useContext(DataContext);
+  const { name } = data;
+  const { idNo } = data;
+
   const [randomSequence, setRandomSequence] = useState('');
+  const [newItem, setNewItem] = useState({
+    name: name,
+    idNo: idNo,
+    accountNo:"",
+    accountName:"",
+    cardNo:"",
+    amount:"0.00",
+    depositStamp:"",
+    withdrawStamp:"",
+    status:"Active",
+  });
 
   const generateRandomNumber = () => {
   let result = '';
@@ -25,8 +42,24 @@ useEffect(() => {
   if (open) {
       const sequence = generateRandomNumber();
       setRandomSequence(sequence);
+      setNewItem((prevState) => ({
+      ...prevState,
+      accountNo: sequence,
+      accountName: accName
+      }))
     }
   }, [open]);
+
+  const sendData = () => {
+    axios.post('https://montif-backend.onrender.com/montif/accounts/new-account', newItem)
+      .then(response => {
+        console.log('Data sent successfully:', response.data);
+        onClose();
+      })
+      .catch(error => {
+        console.error('Error sending data:', error);
+      });
+  };
 
   
   if (!open) return null;
@@ -42,7 +75,9 @@ useEffect(() => {
       </div>
       <div style={{heigth:'35px', display:'flex', alignItems:'center', justifyContent:'center'}}>
         <Button
-        onClick={onClose}
+         onClick={() => {
+          sendData(); 
+        }}
           style={{
             height: "30px",
             width: "160px",
