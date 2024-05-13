@@ -248,9 +248,19 @@ const SavingLayout = () => {
             </div>
             <PopupAcc open={openWin} onClose={() => setOpenWin(false)} accName={name}/>
           </div>
-          <div className="type-bottom-outline">
+          <div className="type-bottom-outline" ref={containerRef}>
             <div>
               <AccountDetail />
+              <div className="type-arrow">
+              <div className="scroll-left" onClick={handleScrollLeft}>
+                {/* &#9665; */}
+                <div className="circle-press"></div>
+              </div>
+              <div className="scroll-right" onClick={handleScrollRight}>
+                {/* &#9655; */}
+                <div className="circle-press1"></div>
+              </div>
+            </div>
             </div>
           </div>
         </div>
