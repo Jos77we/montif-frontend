@@ -252,7 +252,8 @@ const SavingLayout = () => {
             <div>
               <AccountDetail />
             </div>
-            <div className="type-arrow">
+          </div>
+          <div className="type-arrow">
               <div className="scroll-left" onClick={handleScrollLeft}>
                 {/* &#9665; */}
                 <div className="circle-press"></div>
@@ -262,7 +263,6 @@ const SavingLayout = () => {
                 <div className="circle-press1"></div>
               </div>
             </div>
-          </div>
         </div>
         <div className="category-layout">
           <div className="category-notification">
