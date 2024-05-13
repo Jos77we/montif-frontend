@@ -47,10 +47,7 @@ var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'S
 var day = days[dayOfWeek];
 
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-var dateTime = day + date + ' ' + time;
-
-console.log("Day:", day); // Output the day of the week
-console.log("DateTime:", dateTime); // Output the date and time
+var dateTime = day +' '+ date + ' ' + time;
 
 
 useEffect(() => {
@@ -60,7 +57,8 @@ useEffect(() => {
       setNewItem((prevState) => ({
       ...prevState,
       accountNo: sequence,
-      accountName: accName
+      accountName: accName,
+      depositStamp: dateTime
       }))
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
